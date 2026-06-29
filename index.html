@@ -3,68 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sultan Muhammad Iqbal | Portofolio</title>
+    <title>Sultan Muhammad Iqbal | Portofolio & CV</title>
     <style>
-        /* CSS Variables untuk kemudahan edit warna */
         :root {
             --bg-color: #0f0f0f;
             --surface-color: #1a1a1a;
             --text-main: #e0e0e0;
             --text-muted: #9e9e9e;
-            --accent-color: #00d2ff; /* Warna aksen biru cyan khas tech/AI */
+            --accent-color: #00d2ff; 
             --border-color: #333;
         }
 
-        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; font-size: 16px; }
+        a { color: var(--accent-color); text-decoration: none; transition: color 0.3s ease; }
+        a:hover { color: #fff; }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            font-size: 16px;
-        }
-
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #fff;
-        }
-
-        /* Container & Layout */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        section {
-            padding: 80px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        section:last-child {
-            border-bottom: none;
-        }
-
-        h1, h2, h3 {
-            color: #fff;
-            font-weight: 600;
-        }
-
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 80px 0; border-bottom: 1px solid var(--border-color); }
+        section:last-child { border-bottom: none; }
+        h1, h2, h3 { color: #fff; font-weight: 600; }
+        
         h2 {
             font-size: 1.8rem;
             margin-bottom: 30px;
@@ -72,254 +38,86 @@
             align-items: center;
             gap: 10px;
         }
-
-        h2::before {
-            content: "";
-            display: inline-block;
-            width: 20px;
-            height: 2px;
-            background-color: var(--accent-color);
-        }
+        h2::before { content: ""; display: inline-block; width: 20px; height: 2px; background-color: var(--accent-color); }
 
         /* Navbar */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(15, 15, 15, 0.9);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
+            position: fixed; top: 0; width: 100%; background-color: rgba(15, 15, 15, 0.9);
+            backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid var(--border-color);
         }
+        .nav-content { max-width: 900px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 700; color: #fff; letter-spacing: 1px; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: var(--text-muted); font-size: 0.9rem; }
+        .nav-links a:hover { color: var(--accent-color); }
 
-        .nav-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-weight: 700;
-            color: #fff;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* --- PERUBAHAN CSS UNTUK TATA LETAK FOTO --- */
-        #hero {
-            padding-top: 150px;
-            min-height: 80vh;
-            display: flex;
-            flex-direction: row; /* Teks kiri, foto kanan */
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px; /* Ruang antara teks dan foto */
-        }
-
-        .hero-text {
-            flex: 1; /* Mengambil sisa ruang */
-        }
-
-        .hero-image {
-            flex: 0 0 300px; /* Lebar foto tetap, jangan mengecil */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-image img {
-            width: 100%; /* Penuhi wadahnya */
-            max-width: 300px; /* Batasi lebar maks foto */
-            height: 300px; /* Persegi */
-            object-fit: cover; /* Crop agar sesuai wadah */
-            border-radius: 50%; /* Membuat foto bulat */
-            border: 4px solid var(--accent-color); /* Bingkai warna aksen */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Bayangan */
-        }
-        /* --- AKHIR PERUBAHAN CSS --- */
-
-        .subtitle {
-            color: var(--accent-color);
-            font-weight: 500;
-            margin-bottom: 10px;
-            display: block;
-            letter-spacing: 1px;
-        }
-
-        #hero h1 {
-            font-size: 3rem;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        #hero p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: transparent;
-            color: var(--accent-color);
-            border: 1px solid var(--accent-color);
-            border-radius: 4px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: var(--accent-color);
-            color: #000;
-        }
-
-        /* Experience Timeline */
-        .timeline-item {
-            margin-bottom: 40px;
-            position: relative;
-            padding-left: 20px;
-            border-left: 2px solid var(--border-color);
-        }
-
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: -6px;
-            top: 5px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: var(--accent-color);
-        }
-
-        .timeline-date {
-            font-size: 0.85rem;
-            color: var(--accent-color);
-            margin-bottom: 5px;
-        }
-
-        .timeline-title {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-
-        .timeline-company {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 10px;
-        }
-
-        /* Projects Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background-color: var(--surface-color);
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-
-        /* Prompts Section (Code Block style) */
-        .prompt-box {
-            background-color: #000;
-            padding: 15px;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-            font-family: monospace;
-            color: #a9dc76;
-            font-size: 0.9rem;
-            overflow-x: auto;
-            margin-bottom: 15px;
-        }
+        /* Hero */
+        #hero { padding-top: 150px; min-height: 80vh; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 40px; }
+        .hero-text { flex: 1; }
+        .hero-image { flex: 0 0 280px; display: flex; justify-content: center; }
+        .hero-image img { width: 100%; max-width: 280px; height: 280px; object-fit: cover; border-radius: 50%; border: 4px solid var(--accent-color); }
+        .subtitle { color: var(--accent-color); font-weight: 500; margin-bottom: 10px; display: block; }
+        #hero h1 { font-size: 2.8rem; line-height: 1.2; margin-bottom: 20px; }
+        #hero p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px; }
         
-        .prompt-title {
-            font-size: 1rem;
-            margin-bottom: 10px;
-            color: #fff;
-        }
+        .btn { display: inline-block; padding: 10px 20px; border: 1px solid var(--accent-color); border-radius: 4px; color: var(--accent-color); font-weight: 500; transition: all 0.3s ease; }
+        .btn:hover { background-color: var(--accent-color); color: #000; }
 
-        /* Footer / Contact */
-        footer {
-            padding: 50px 0;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-            margin-top: 50px;
-        }
+        /* Experience & Timeline */
+        .timeline-item { margin-bottom: 40px; position: relative; padding-left: 30px; border-left: 2px solid var(--border-color); }
+        .timeline-item::before { content: ""; position: absolute; left: -6px; top: 8px; width: 10px; height: 10px; border-radius: 50%; background-color: var(--accent-color); }
+        .timeline-header { display: flex; align-items: start; justify-content: space-between; gap: 15px; margin-bottom: 10px; }
+        .company-meta { display: flex; align-items: center; gap: 12px; }
         
-        .social-links {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
+        /* Gaya untuk Logo Perusahaan */
+        .company-logo { width: 45px; height: 45px; border-radius: 6px; object-fit: contain; background: #222; border: 1px solid var(--border-color); padding: 4px; }
+        
+        .timeline-date { font-size: 0.85rem; color: var(--accent-color); font-weight: 500; white-space: nowrap; }
+        .timeline-title { font-size: 1.25rem; }
+        .timeline-company { font-size: 0.95rem; color: var(--text-muted); }
+        .timeline-body ul { margin-left: 18px; color: var(--text-muted); font-size: 0.95rem; }
+        .timeline-body li { margin-bottom: 6px; }
+        .highlights { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .badge { background: #222; border: 1px solid #444; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; color: #fff; }
+        .badge.highlight-badge { border-color: var(--accent-color); color: var(--accent-color); font-weight: bold; }
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            #hero {
-                flex-direction: column-reverse; /* Foto di bawah teks di mobile */
-                padding-top: 100px;
-                text-align: center;
-                gap: 20px;
-            }
-            .hero-image img {
-                width: 200px;
-                height: 200px;
-            }
-            #hero h1 { font-size: 2.2rem; }
-            .nav-links { display: none; /* Sederhana untuk mobile */ }
+        /* Grid Layout */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background-color: var(--surface-color); padding: 25px; border-radius: 8px; border: 1px solid var(--border-color); transition: all 0.3s ease; }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
+        .card h3 { margin-bottom: 12px; font-size: 1.2rem; color: #fff; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* Prompts & Tech Box */
+        .prompt-box { background-color: #050505; padding: 15px; border-radius: 6px; border: 1px solid var(--border-color); font-family: monospace; color: #a9dc76; font-size: 0.9rem; overflow-x: auto; margin-bottom: 20px; }
+        .prompt-title { font-size: 1rem; margin-bottom: 8px; color: #fff; font-weight: 500; }
+
+        /* Skills Tags */
+        .skills-container { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill-tag { background: var(--surface-color); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-main); }
+
+        footer { padding: 60px 0; text-align: center; border-top: 1px solid var(--border-color); }
+        .social-links { margin-top: 25px; display: flex; justify-content: center; gap: 15px; }
+
+        @media (max-width: 768px) {
+            #hero { flex-direction: column-reverse; padding-top: 100px; text-align: center; gap: 30px; }
+            .timeline-header { flex-direction: column; align-items: flex-start; gap: 5px; }
+            .timeline-date { margin-top: 5px; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigasi -->
     <nav>
         <div class="nav-content">
-            <div class="logo">Iqbal.</div>
+            <div class="logo">IQBAL.</div>
             <div class="nav-links">
                 <a href="#hero">Beranda</a>
+                <a href="#skills">Keahlian</a>
                 <a href="#experience">Pengalaman</a>
-                <a href="#projects">Project & AI</a>
-                <a href="#prompts">Prompts</a>
+                <a href="#projects">Portofolio</a>
+                <a href="#prompts">AI Prompts</a>
                 <a href="#contact">Kontak</a>
             </div>
         </div>
@@ -327,76 +125,224 @@
 
     <div class="container">
         
-        <!-- --- PERUBAHAN HTML UNTUK FOTO --- -->
         <!-- Hero Section -->
         <section id="hero">
             <div class="hero-text">
-                <span class="subtitle">Hi, saya Sultan Muhammad Iqbal.</span>
-                <h1>Digital Marketer &<br>AI Automation Enthusiast.</h1>
-                <p>Saya menggabungkan strategi pemasaran digital berbasis data dengan efisiensi otomatisasi AI. Berpengalaman mengeksekusi kampanye iklan berskala besar untuk *brand* ritel dan membangun ekosistem data yang terukur.</p>
+                <span class="subtitle">Digital Marketer & AI Specialist</span>
+                <h1>Sultan Muhammad Iqbal</h1>
+                <p>Spesialis pemasaran digital dan otomatisasi AI asal Surabaya. Menggabungkan kemampuan analisa data berbasis performa (Paid Ads, SEO) dengan implementasi AI untuk memotong alur kerja operasional bisnis e-commerce ritel secara efisien.</p>
                 <div>
-                    <a href="#contact" class="btn">Mari Berdiskusi</a>
+                    <a href="#contact" class="btn">Hubungi Saya</a>
+                    <a href="https://sultanmuhammadiqbal.notion.site/portofolio-sultan-muhammad-iqbal-03894634d4eb43348c910b0729587394" target="_blank" class="btn" style="margin-left:10px; border-color:#555; color:#fff;">Lihat Notion Portofolio</a>
                 </div>
             </div>
-            
             <div class="hero-image">
-                <!-- File foto Anda -->
-                <img src="Gemini_Generated_Image_p3259op3259op325.jpg" alt="Sultan Muhammad Iqbal Profil">
+                <img src="Gemini_Generated_Image_p3259op3259op325.jpg" alt="Sultan Muhammad Iqbal">
             </div>
         </section>
-        <!-- --- AKHIR PERUBAHAN HTML --- -->
+
+        <!-- Keahlian / Skills -->
+        <section id="skills">
+            <h2>Keahlian & Kompetensi</h2>
+            <div class="skills-container">
+                <div class="skill-tag">Pemasaran Digital</div>
+                <div class="skill-tag">Digital Ads Performer</div>
+                <div class="skill-tag">SEO Audit & Strategy</div>
+                <div class="skill-tag">Data Analyst (Looker Studio)</div>
+                <div class="skill-tag">AI Automation Enthusiast</div>
+                <div class="skill-tag">Copywriter</div>
+                <div class="skill-tag">E-Commerce Management</div>
+                <div class="skill-tag">Marketplace Ops (Shopee, Tokopedia, Lazada, TikTok)</div>
+                <div class="skill-tag">Live & Talent Management</div>
+            </div>
+        </section>
 
         <!-- Experience Section -->
         <section id="experience">
-            <h2>Pengalaman Kerja</h2>
-            
+            <h2>Riwayat Pekerjaan</h2>
+
+            <!-- 1. Senikersku -->
             <div class="timeline-item">
-                <div class="timeline-date">2024 - Sekarang</div>
-                <div class="timeline-title">Junior Digital Marketer</div>
-                <div class="timeline-company">Senikersku</div>
-                <p>Mengelola kampanye Google Ads berskala tinggi untuk brand top tier (Adidas, New Balance, On Cloud). Mengeksekusi optimasi budget strategis, memelihara keyword tracking, dan membangun struktur kampanye *Performance Max* serta *Jaring Pengaman* untuk memaksimalkan ROAS.</p>
+                <div class="timeline-header">
+                    <div class="company-meta">
+                        <!-- TEMPAT LOGO SENIKERSKU -->
+                        <img src="logo-senikersku.png" class="company-logo" alt="Logo Senikersku">
+                        <div>
+                            <h3 class="timeline-title">Digital Marketing</h3>
+                            <div class="timeline-company">Senikersku</div>
+                        </div>
+                    </div>
+                    <div class="timeline-date">Sep 2024 - Sekarang</div>
+                </div>
+                <div class="timeline-body">
+                    <p style="margin-bottom: 10px; color:#fff; font-weight:500;">Bertanggung jawab penuh dalam merancang ekosistem pertumbuhan digital end-to-end (SEO, Paid Ads, dan AI Integration).</p>
+                    <ul>
+                        <li><strong>Traffic Acquisition:</strong> Mendatangkan 52 juta kunjungan website serta memicu pertumbuhan pengguna baru sebesar 64% dalam 10 bulan.</li>
+                        <li><strong>Search Engine Optimization:</strong> Meningkatkan performa peringkat SEO agresif hingga 375% dan Organic Search naik sebesar 192% melalui strategi konten teknis[cite: 1].</li>
+                        <li><strong>Paid Ads Management:</strong> Mengelola iklan komparatif tinggi di Shopee (Kenaikan ROAS konsisten hingga 50%) serta optimasi Google Ads (+34% Conversion Actions)[cite: 1].</li>
+                        <li><strong>Marketplace Periklanan:</strong> Menangani ads Tokopedia, Shopee, TikTok dengan pencapaian ROAS/ROI skala minimal 19 hingga maksimal 45[cite: 1].</li>
+                        <li><strong>AI Digital Innovation:</strong> Integrasi AI LLM untuk optimasi keterlibatan website hingga naik sebesar 50%[cite: 1].</li>
+                    </ul>
+                    <div class="highlights">
+                        <span class="badge highlight-badge">GA4</span>
+                        <span class="badge highlight-badge">Google Ads</span>
+                        <span class="badge highlight-badge">n8n Automation</span>
+                        <span class="badge highlight-badge">SEO</span>
+                    </div>
+                </div>
             </div>
 
+            <!-- 2. Muscle Factory -->
             <div class="timeline-item">
-                <div class="timeline-date">2022 - 2024</div>
-                <div class="timeline-title">Marketplace Specialist</div>
-                <div class="timeline-company">Green Mile Indonesia</div>
-                <p>Mengelola ekosistem marketplace perusahaan, menganalisis tren produk, dan mengoptimalkan funnel penjualan untuk meningkatkan konversi secara konsisten.</p>
+                <div class="timeline-header">
+                    <div class="company-meta">
+                        <!-- TEMPAT LOGO MUSCLE FACTORY -->
+                        <img src="logo-musclefactory.png" class="company-logo" alt="Logo Muscle Factory">
+                        <div>
+                            <h3 class="timeline-title">Manager Sales & Marketing</h3>
+                            <div class="timeline-company">Muscle Factory (Rebranding Gudang Supplement)</div>
+                        </div>
+                    </div>
+                    <div class="timeline-date">2022 - 2024</div>
+                </div>
+                <div class="timeline-body">
+                    <ul>
+                        <li>Mengembangkan dan memimpin tim penjualan online untuk mencapai target profitabilitas bulanan & tahunan[cite: 1].</li>
+                        <li>Meningkatkan visibilitas toko digital melalui implementasi SEO, Digital Ads, pengelolaan live streamer, dan talent management[cite: 1].</li>
+                        <li>Mengatur pergerakan inventaris e-commerce serta memegang kendali atas relasi penjualan B2B, reseller, dan dropshipper[cite: 1].</li>
+                    </ul>
+                </div>
             </div>
 
+            <!-- 3. Perkiraan Rasa -->
             <div class="timeline-item">
-                <div class="timeline-date">2021 - 2022</div>
-                <div class="timeline-title">E-Commerce & Digital Ops</div>
-                <div class="timeline-company">The Fitzone</div>
-                <p>Menangani operasional e-commerce dan strategi *awareness* digital pada tahap awal pertumbuhan bisnis.</p>
+                <div class="timeline-header">
+                    <div class="company-meta">
+                        <!-- TEMPAT LOGO PERKIRAAN RASA -->
+                        <img src="logo-perkiraanrasa.png" class="company-logo" alt="Logo Perkiraan Rasa">
+                        <div>
+                            <h3 class="timeline-title">Social Media Admin (Freelance)</h3>
+                            <div class="timeline-company">Perkiraan Rasa</div>
+                        </div>
+                    </div>
+                    <div class="timeline-date">2021 - 2022</div>
+                </div>
+                <div class="timeline-body">
+                    <ul>
+                        <li>Merancang topik konten bulanan, membuat aset postingan berbasis softselling, serta menganalisa metrik laporan data engagement[cite: 1].</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 4. Gudang Supplement -->
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="company-meta">
+                        <img src="logo-gudangsupplement.png" class="company-logo" alt="Logo Gudang Supplement">
+                        <div>
+                            <h3 class="timeline-title">Marketplace Admin & Copywriter</h3>
+                            <div class="timeline-company">Gudang Supplement</div>
+                        </div>
+                    </div>
+                    <div class="timeline-date">2021 - 2022</div>
+                </div>
+                <div class="timeline-body">
+                    <ul>
+                        <li>Listing produk dan pengecekan berkala multi-marketplace (Shopee, Tokopedia, Lazada, JD.ID) serta menangani Customer Service[cite: 1].</li>
+                        <li>Bertindak sebagai administrator Instagram sekaligus memproduksi konten tulisan (content writer)[cite: 1].</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 5. Ashura Distro -->
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="company-meta">
+                        <img src="logo-ashura.png" class="company-logo" alt="Logo Ashura Distro">
+                        <div>
+                            <h3 class="timeline-title">Marketplace Admin & Content Creator (Freelance)</h3>
+                            <div class="timeline-company">Ashura Distro</div>
+                        </div>
+                    </div>
+                    <div class="timeline-date">2018 - 2021</div>
+                </div>
+                <div class="timeline-body">
+                    <ul>
+                        <li>Menangani operasional sirkulasi stok, penyesuaian harga, serta pengelolaan berkala di 4 e-commerce besar[cite: 1].</li>
+                        <li>Riset kompetitor, eksekusi pembuatan konten kreatif, menganalisa tren, serta mengendalikan perencanaan promosi produk[cite: 1].</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 6. Awwan Store -->
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="company-meta">
+                        <img src="logo-awwan.png" class="company-logo" alt="Logo Awwan Store">
+                        <div>
+                            <h3 class="timeline-title">Admin Online Marketplace</h3>
+                            <div class="timeline-company">Awwan Store</div>
+                        </div>
+                    </div>
+                    <div class="timeline-date">2019 - 2020</div>
+                </div>
+                <div class="timeline-body">
+                    <ul>
+                        <li>Penanggung jawab pengadaan inventaris, proses stock opname barang baru, update harga, serta listing sebaran produk ritel[cite: 1].</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Projects & Portofolio Showcase -->
+        <section id="projects">
+            <h2>Portofolio & Proyek Unggulan</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Google Looker Studio Analyst</h3>
+                    <p>Membangun dasbor data analitik menggunakan Google Looker Studio untuk memetakan performa tren produk, melacak platform penyumbang omset tertinggi, dan memetakan profil demografi pembeli potensial[cite: 1].</p>
+                </div>
+                <div class="card">
+                    <h3>Marketing Brand Guideline</h3>
+                    <p>Merancang peta jalan panduan identitas visual brand untuk manajemen pemasaran: menyusun warna identitas, formula hashtag visibilitas, penetapan target audiens, serta standardisasi nada bicara (Tone of Voice) konten[cite: 1].</p>
+                </div>
+                <div class="card">
+                    <h3>AI Content Schedule & Workflow</h3>
+                    <p>Otomatisasi kalender konten dan pipeline pengerjaan taktis, seperti visual pinterest, generator video dengan sulih suara (AI Voiceover), serta pengelolaan taktis linimasa promosi digital[cite: 1].</p>
+                </div>
+                <div class="card">
+                    <h3>Instagram Theme Page Project</h3>
+                    <p>Membangun, menumbuhkan, dan mengelola media bertema khusus dengan fokus vertikal pada sektor hiburan serta optimalisasi nilai engagement audiens secara organik[cite: 1].</p>
+                </div>
             </div>
         </section>
 
-        <!-- Projects & SaaS Section -->
-        <section id="projects">
-            <h2>Projects & AI Automation</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Custom "Gemini Gems"</h3>
-                    <p>Membangun sistem AI kustom menggunakan kapabilitas Gemini untuk menganalisis data mentah dari Google Ads & GA4, mengonversinya menjadi *insight* keputusan strategis secara otomatis.</p>
+        <!-- Certifications -->
+        <section id="certifications">
+            <h2>Sertifikasi & Pelatihan</h2>
+            <div style="display:flex; flex-direction:column; gap: 15px;">
+                <div>
+                    <strong>Digital Marketing Class Professional Certification</strong> — MySkill Academy (2023)
+                    <p style="color:var(--text-muted); font-size:0.9rem;">Menuntaskan 12 silabus utama pemasaran digital tingkat lanjut[cite: 1].</p>
                 </div>
-                <div class="card">
-                    <h3>Content Automation Pipeline</h3>
-                    <p>Merancang *workflow* berbasis AI untuk menghasilkan ratusan aset konten digital dalam waktu singkat, memangkas *man-hour* divisi kreatif secara signifikan.</p>
+                <div>
+                    <strong>E-Commerce Taktikal Technical Learning</strong> — Dedy Liem Class (2022)
+                    <p style="color:var(--text-muted); font-size:0.9rem;">Studi pendalaman operasional optimasi toko di platform marketplace[cite: 1].</p>
                 </div>
-                <div class="card">
-                    <h3>SaaS Product Research (Ongoing)</h3>
-                    <p>Eksplorasi dan pengembangan purwarupa SaaS untuk memecahkan *bottleneck* operasional di sektor e-commerce ritel.</p>
+                <div>
+                    <strong>Dasar Pemasaran Online</strong> — Google Gapura Digital Surabaya (2019)
+                    <p style="color:var(--text-muted); font-size:0.9rem;">Pelatihan fundamental ekosistem digital marketing Google & marketplace lokal[cite: 1].</p>
                 </div>
             </div>
         </section>
 
         <!-- Prompting Collection Section -->
         <section id="prompts">
-            <h2>Koleksi Prompting</h2>
-            <p style="margin-bottom: 20px; color: var(--text-muted);">Beberapa kerangka *prompt* yang saya gunakan untuk efisiensi *copywriting* dan analisis data.</p>
+            <h2>Koleksi Prompting AI</h2>
+            <p style="margin-bottom: 20px; color: var(--text-muted);">Kerangka prompt taktis yang saya terapkan sehari-hari untuk efisiensi riset dan alur copy[cite: 1].</p>
             
-            <div class="prompt-title">1. Copywriting Ads (Expert/Cool Tone)</div>
+            <div class="prompt-title">1. Copywriting Ads (Expert/Cool Tone)[cite: 1]</div>
             <div class="prompt-box">
 Act as an expert digital marketer. Write 3 variations of Google Ads copy for [Product Name]. 
 Rules:
@@ -406,7 +352,7 @@ Rules:
 - Sitelink descriptions max 35 characters.
             </div>
 
-            <div class="prompt-title">2. Data Analysis (Campaign Performance)</div>
+            <div class="prompt-title">2. Data Analysis (Campaign Performance)[cite: 1]</div>
             <div class="prompt-box">
 Analyze this raw Google Ads data: [Insert Data].
 Provide a concise breakdown of:
@@ -416,31 +362,19 @@ Provide a concise breakdown of:
             </div>
         </section>
 
-        <!-- Articles Section -->
-        <section id="articles">
-            <h2>Artikel & Catatan</h2>
-            <ul style="list-style-position: inside; color: var(--text-muted);">
-                <li style="margin-bottom: 10px;">
-                    <a href="#">Kenapa "Jaring Pengaman" Google Ads Selamatkan Budget Ritel</a> (Segera Hadir)
-                </li>
-                <li style="margin-bottom: 10px;">
-                    <a href="#">Membangun Edu Creator Pipeline dengan AI</a> (Segera Hadir)
-                </li>
-            </ul>
-        </section>
-
-    </div> <!-- End Container -->
+    </div>
 
     <!-- Contact & Footer -->
     <footer id="contact">
         <div class="container">
-            <h2>Let's Connect</h2>
-            <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto;">
-                Tertarik untuk diskusi soal optimasi Google Ads, AI Automation, atau proyek kolaborasi? Sapa saya via email atau LinkedIn.
+            <h2>Hubungi Saya</h2>
+            <p style="color: var(--text-muted); max-width: 500px; margin: 15px auto;">
+                Terbuka untuk kolaborasi proyek digital marketing skala menengah-besar, setup otomatisasi AI, maupun konsultasi performa iklan[cite: 1].
             </p>
+            <p style="color: var(--accent-color); font-weight:500; margin-bottom: 15px;">📍 Surabaya, Indonesia[cite: 1] | 📞 082132268275[cite: 1]</p>
             <div class="social-links">
-                <a href="mailto:emailmu@gmail.com" class="btn">Email Saya</a>
-                <a href="https://linkedin.com/in/username-linkedin-mu" class="btn" target="_blank">LinkedIn</a>
+                <a href="mailto:sultaniqbal223@gmail.com" class="btn">Email Saya</a>[cite: 1]
+                <a href="https://sultanmuhammadiqbal.notion.site/portofolio-sultan-muhammad-iqbal-03894634d4eb43348c910b0729587394" class="btn" target="_blank">Notion Portofolio</a>[cite: 1]
             </div>
             <p style="margin-top: 50px; font-size: 0.8rem; color: #555;">
                 &copy; 2026 Sultan Muhammad Iqbal. Built with HTML & CSS.
