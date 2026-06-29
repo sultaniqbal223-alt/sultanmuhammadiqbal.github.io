@@ -106,7 +106,9 @@
         .skill-tag { background: rgba(26, 26, 26, 0.4); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-main); }
 
         footer { padding: 60px 0; text-align: center; border-top: 1px solid var(--border-color); }
-        .social-links { margin-top: 25px; display: flex; justify-content: center; gap: 15px; }
+        
+        /* Modifikasi disini agar tombol sosmed responsif di mobile */
+        .social-links { margin-top: 25px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
 
         @media (max-width: 768px) {
             #hero { flex-direction: column-reverse; padding-top: 100px; text-align: center; gap: 30px; }
@@ -271,7 +273,7 @@
                 <div class="timeline-body">
                     <ul>
                         <li>Listing produk dan pengecekan berkala multi-marketplace (Shopee, Tokopedia, Lazada, JD.ID) serta menangani Customer Service.</li>
-                        <li>Bertindak sebagai administrator Instagram sekaligus memproduksi konten tulisan (content writer).</li>
+                        <li>Bertindak asbaga administrator Instagram sekaligus memproduksi konten tulisan (content writer).</li>
                     </ul>
                     <div class="highlights">
                         <span class="badge highlight-badge">Administration</span>
@@ -417,10 +419,18 @@ Provide a concise breakdown of:
                 Terbuka untuk kolaborasi proyek digital marketing skala menengah-besar, setup otomatisasi AI, maupun konsultasi performa iklan.
             </p>
             <p style="color: var(--accent-color); font-weight:500; margin-bottom: 15px;">📍 Surabaya, Indonesia | 📞 082132268275</p>
+            
+            <!-- --- UPDATE TOMBOL SOSMED DISINI --- -->
             <div class="social-links">
-                <a href="mailto:sultaniqbal223@gmail.com" class="btn">Email Saya</a>
-                <a href="https://sultanmuhammadiqbal.notion.site/portofolio-sultan-muhammad-iqbal-03894634d4eb43348c910b0729587394" class="btn" target="_blank">Notion Portofolio</a>
+                <a href="mailto:sultaniqbal223@gmail.com" class="btn">Email</a>
+                <a href="https://sultanmuhammadiqbal.notion.site/portofolio-sultan-muhammad-iqbal-03894634d4eb43348c910b0729587394" class="btn" target="_blank">Notion</a>
+                <a href="https://www.linkedin.com/in/sultan-muhammad-iqbal-424001280" class="btn" target="_blank">LinkedIn</a>
+                <a href="https://www.instagram.com/iqbal.digitalera/" class="btn" target="_blank">Instagram</a>
+                <a href="https://id.pinterest.com/ashuraimage/" class="btn" target="_blank">Pinterest</a>
+                <a href="#" class="btn" target="_blank">Threads</a>
             </div>
+            <!-- ---------------------------------- -->
+
             <p style="margin-top: 50px; font-size: 0.8rem; color: #555;">
                 &copy; 2026 Sultan Muhammad Iqbal. Built with HTML & CSS.
             </p>
