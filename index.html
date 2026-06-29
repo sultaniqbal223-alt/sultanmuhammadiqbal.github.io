@@ -121,14 +121,38 @@
             color: var(--accent-color);
         }
 
-        /* Hero Section */
+        /* --- PERUBAHAN CSS UNTUK TATA LETAK FOTO --- */
         #hero {
             padding-top: 150px;
             min-height: 80vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            flex-direction: row; /* Teks kiri, foto kanan */
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px; /* Ruang antara teks dan foto */
         }
+
+        .hero-text {
+            flex: 1; /* Mengambil sisa ruang */
+        }
+
+        .hero-image {
+            flex: 0 0 300px; /* Lebar foto tetap, jangan mengecil */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            width: 100%; /* Penuhi wadahnya */
+            max-width: 300px; /* Batasi lebar maks foto */
+            height: 300px; /* Persegi */
+            object-fit: cover; /* Crop agar sesuai wadah */
+            border-radius: 50%; /* Membuat foto bulat */
+            border: 4px solid var(--accent-color); /* Bingkai warna aksen */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Bayangan */
+        }
+        /* --- AKHIR PERUBAHAN CSS --- */
 
         .subtitle {
             color: var(--accent-color);
@@ -270,8 +294,18 @@
 
         /* Responsive */
         @media (max-width: 600px) {
+            #hero {
+                flex-direction: column-reverse; /* Foto di bawah teks di mobile */
+                padding-top: 100px;
+                text-align: center;
+                gap: 20px;
+            }
+            .hero-image img {
+                width: 200px;
+                height: 200px;
+            }
             #hero h1 { font-size: 2.2rem; }
-            .nav-links { display: none; /* Sederhana untuk mobile, bisa dikembangkan nanti */ }
+            .nav-links { display: none; /* Sederhana untuk mobile */ }
         }
     </style>
 </head>
@@ -293,15 +327,24 @@
 
     <div class="container">
         
+        <!-- --- PERUBAHAN HTML UNTUK FOTO --- -->
         <!-- Hero Section -->
         <section id="hero">
-            <span class="subtitle">Hi, saya Sultan Muhammad Iqbal.</span>
-            <h1>Digital Marketer &<br>AI Automation Enthusiast.</h1>
-            <p>Saya menggabungkan strategi pemasaran digital berbasis data dengan efisiensi otomatisasi AI. Berpengalaman mengeksekusi kampanye iklan berskala besar untuk *brand* ritel dan membangun ekosistem data yang terukur.</p>
-            <div>
-                <a href="#contact" class="btn">Mari Berdiskusi</a>
+            <div class="hero-text">
+                <span class="subtitle">Hi, saya Sultan Muhammad Iqbal.</span>
+                <h1>Digital Marketer &<br>AI Automation Enthusiast.</h1>
+                <p>Saya menggabungkan strategi pemasaran digital berbasis data dengan efisiensi otomatisasi AI. Berpengalaman mengeksekusi kampanye iklan berskala besar untuk *brand* ritel dan membangun ekosistem data yang terukur.</p>
+                <div>
+                    <a href="#contact" class="btn">Mari Berdiskusi</a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <!-- File foto Anda -->
+                <img src="Gemini_Generated_Image_p3259op3259op325.jpg" alt="Sultan Muhammad Iqbal Profil">
             </div>
         </section>
+        <!-- --- AKHIR PERUBAHAN HTML --- -->
 
         <!-- Experience Section -->
         <section id="experience">
@@ -396,8 +439,8 @@ Provide a concise breakdown of:
                 Tertarik untuk diskusi soal optimasi Google Ads, AI Automation, atau proyek kolaborasi? Sapa saya via email atau LinkedIn.
             </p>
             <div class="social-links">
-                <a href="mailto:sultaniqbal223@gmail.com" class="btn">Email Saya</a>
-                <a href=www.linkedin.com/in/sultan-muhammad-iqbal-424001280 class="btn" target="_blank">LinkedIn</a>
+                <a href="mailto:emailmu@gmail.com" class="btn">Email Saya</a>
+                <a href="https://linkedin.com/in/username-linkedin-mu" class="btn" target="_blank">LinkedIn</a>
             </div>
             <p style="margin-top: 50px; font-size: 0.8rem; color: #555;">
                 &copy; 2026 Sultan Muhammad Iqbal. Built with HTML & CSS.
